@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cetak Pengajuan Peminjaman</title>
+    <title>Cetak Pengajuan Kasbon</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
         @page {
@@ -13,7 +13,7 @@
             margin: 0; 
             padding: 0;
             line-height: 1.4;
-            color: #333;
+            color: black;
             font-size: 12px;
         }
         .container { 
@@ -139,14 +139,14 @@
         <div class="letterhead">
             <div class="company-name">PT. IQRO LAUTAN PENA</div>
             <div class="company-address">
-                Alamat: Cilegon - Serang<br>
-                Telp: 08123456789 | Email: iqrolautanpena.co.id
+                Alamat: Jl. Raya Anyer No.59, Kel. Gunungsugih Ciwandan - Cilegon - Banten<br>
+                Telp: (0254)7960937 | Email: iqrolautanpenapt@yahoo.com
             </div>
         </div>
 
         <!-- Judul Dokumen -->
         <div class="document-title">
-            Formulir Pengajuan Peminjaman Karyawan
+            Formulir Pengajuan Kasbon Karyawan
         </div>
 
         <div class="document-number">
@@ -156,7 +156,7 @@
         <!-- Data Peminjaman -->
         <div class="content-section">
             <p>Dengan hormat,</p>
-            <p>Bersama ini disampaikan pengajuan peminjaman dengan rincian sebagai berikut:</p>
+            <p>Bersama ini disampaikan pengajuan kasbon dengan rincian sebagai berikut:</p>
             
             <table class="table">
                 <tr>
@@ -201,7 +201,7 @@
         <!-- Bagian Persetujuan -->
         <div class="approval-section">
             <div class="approval-text">
-                Demikian pengajuan peminjaman ini dibuat dengan sebenar-benarnya untuk dapat diproses lebih lanjut sesuai dengan ketentuan yang berlaku di perusahaan.
+                Demikian pengajuan Kasbon ini dibuat dengan sebenar-benarnya untuk dapat diproses lebih lanjut sesuai dengan ketentuan yang berlaku di perusahaan.
             </div>
 
             <!-- Tanda Tangan -->

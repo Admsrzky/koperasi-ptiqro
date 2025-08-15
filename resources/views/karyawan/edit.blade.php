@@ -99,7 +99,7 @@
                         </label>
                         <select name="status" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                             <option value="aktif" {{ old('status', $karyawan->status) == 'aktif' ? 'selected' : '' }}>Aktif</option>
-                            <option value="tidak_aktif" {{ old('status', $karyawan->status) == 'tidak_aktif' ? 'selected' : '' }}>Tidak Aktif</option>
+                            <option value="Tidak Aktif" {{ old('status', $karyawan->status) == 'Tidak Aktif' ? 'selected' : '' }}>Tidak Aktif</option>
                         </select>
                     </div>
                 </div>

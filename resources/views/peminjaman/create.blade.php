@@ -4,7 +4,7 @@
             <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6">
                 <h2 class="text-2xl font-bold flex items-center">
                     <i class="fas fa-money-bill-wave mr-3"></i>
-                    Tambah Peminjaman Baru
+                    Tambah Kasbon Baru
                 </h2>
             </div>
 

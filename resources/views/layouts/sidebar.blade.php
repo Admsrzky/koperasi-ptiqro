@@ -31,7 +31,7 @@
             <a href="{{ route('peminjaman.index') }}"
                 class="flex items-center px-6 py-3 {{ request()->routeIs('peminjaman.*') ? 'text-blue-600 bg-blue-50 border-r-4 border-blue-600' : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors' }}">
                 <i class="fas fa-hand-holding-usd mr-3"></i>
-                Pinjaman
+                Kasbon
             </a>
             <a href="{{ route('penggajian.index') }}"
                 class="flex items-center px-6 py-3 {{ request()->routeIs('penggajian.*') ? 'text-blue-600 bg-blue-50 border-r-4 border-blue-600' : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors' }}">
@@ -41,7 +41,7 @@
             <a href="{{ route('report.peminjam') }}"
                 class="flex items-center px-6 py-3 {{ request()->routeIs('report.*') ? 'text-blue-600 bg-blue-50 border-r-4 border-blue-600' : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors' }}">
                 <i class="fas fa-hand-holding-usd mr-3"></i>
-                Laporan Peminjaman
+                Laporan Kasbon
             </a>
         @endif
     </nav>

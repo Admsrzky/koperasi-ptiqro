@@ -1,6 +1,6 @@
 <x-app-layout title="Dashboard Detail">
     <!-- Stats Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+    <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
         <div class="bg-white rounded-lg shadow-md p-6 card-hover">
             <div class="flex items-center justify-between">
                 <div>
@@ -58,12 +58,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Charts Section -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+    <!-- <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6"> -->
         <!-- Peminjaman Chart -->
-        <div class="bg-white rounded-lg shadow-md p-6">
+        <!-- <div class="bg-white rounded-lg shadow-md p-6">
             <div class="flex items-center justify-between mb-4">
                 <h3 class="text-lg font-semibold text-gray-800">Grafik Peminjaman</h3>
                 <select id="peminjamanPeriod" class="text-sm border border-gray-300 rounded-md px-3 py-1">
@@ -74,10 +74,10 @@
             <div class="chart-container">
                 <canvas id="peminjamanChart"></canvas>
             </div>
-        </div>
+        </div> -->
 
         <!-- Penambahan Karyawan Chart -->
-        <div class="bg-white rounded-lg shadow-md p-6">
+        <!-- <div class="bg-white rounded-lg shadow-md p-6">
             <div class="flex items-center justify-between mb-4">
                 <h3 class="text-lg font-semibold text-gray-800">Grafik Penambahan Karyawan</h3>
                 <select id="karyawanPeriod" class="text-sm border border-gray-300 rounded-md px-3 py-1">
@@ -88,13 +88,13 @@
             <div class="chart-container">
                 <canvas id="karyawanChart"></canvas>
             </div>
-        </div>
-    </div>
+        </div> -->
+    <!-- </div> -->
 
     <!-- Recent Activities & Top Members -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- <div class="grid grid-cols-1 lg:grid-cols-2 gap-6"> -->
         <!-- Recent Activities -->
-        <div class="bg-white rounded-lg shadow-md p-6">
+        <!-- <div class="bg-white rounded-lg shadow-md p-6">
             <h3 class="text-lg font-semibold text-gray-800 mb-4">Aktivitas Terbaru</h3>
             <div class="space-y-4">
                 @foreach ($recentActivities as $activity)
@@ -126,10 +126,10 @@
             <div class="mt-4 pt-4 border-t border-gray-200">
                 <a href="{{ route('peminjaman.index') }}" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Lihat semua aktivitas →</a>
             </div>
-        </div>
+        </div> -->
 
         <!-- Top Members -->
-        <div class="bg-white rounded-lg shadow-md p-6">
+        <!-- <div class="bg-white rounded-lg shadow-md p-6">
             <h3 class="text-lg font-semibold text-gray-800 mb-4">Anggota Terbaik</h3>
             <div class="space-y-4">
                 @foreach ($topMembers as $index => $member)
@@ -153,38 +153,71 @@
             <div class="mt-4 pt-4 border-t border-gray-200">
                 <a href="{{ route('karyawan.index') }}" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Lihat semua anggota →</a>
             </div>
-        </div>
-    </div>
+        </div> -->
+    <!-- </div> -->
 
     <!-- Quick Actions -->
-    <div class="mt-6 bg-white rounded-lg shadow-md p-6">
+    <!-- <div class="mt-6 bg-white rounded-lg shadow-md p-6">
         <h3 class="text-lg font-semibold text-gray-800 mb-4">Aksi Cepat</h3>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <a href="{{ route('karyawan.create') }}"
                 class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
                 <i class="fas fa-user-plus text-blue-600 text-2xl mb-2"></i>
-                <span class="text-sm font-medium text-gray-700">Tambah Anggota</span>
+                <span class="text-sm font-medium text-gray-700">Karyawan</span>
             </a>
 
             <a href="{{ route('peminjaman.create') }}"
                 class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
                 <i class="fas fa-coins text-green-600 text-2xl mb-2"></i>
-                <span class="text-sm font-medium text-gray-700">Input Pinjaman</span>
+                <span class="text-sm font-medium text-gray-700">Kasbon</span>
             </a>
 
             <a href="{{ route('report.peminjam') }}"
                 class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
                 <i class="fas fa-file-invoice text-yellow-600 text-2xl mb-2"></i>
-                <span class="text-sm font-medium text-gray-700">Lihat Laporan Peminjaman</span>
+                <span class="text-sm font-medium text-gray-700">Penggajian</span>
             </a>
 
             <a href="{{ route('profile.edit') }}"
                 class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
                 <i class="fas fa-cog text-purple-600 text-2xl mb-2"></i>
-                <span class="text-sm font-medium text-gray-700">Pengaturan</span>
+                <span class="text-sm font-medium text-gray-700">Laporan Kasbon</span>
             </a>
         </div>
+    </div> -->
+
+    <!-- Quick Actions -->
+<div class="mt-6 bg-white rounded-lg shadow-md p-6">
+    <h3 class="text-lg font-semibold text-gray-800 mb-4">Aksi Cepat</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+        @if (auth()->user()->role == 'admin')
+            <a href="{{ route('karyawan.index') }}"
+                class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <i class="fas fa-users text-green-600 text-2xl mb-2"></i>
+                <span class="text-sm font-medium text-gray-700">Karyawan</span>
+            </a>
+
+            <a href="{{ route('peminjaman.index') }}"
+                class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <i class="fas fa-hand-holding-usd text-yellow-600 text-2xl mb-2"></i>
+                <span class="text-sm font-medium text-gray-700">Kasbon</span>
+            </a>
+
+            <a href="{{ route('penggajian.index') }}"
+                class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <i class="fas fa-coins text-purple-600 text-2xl mb-2"></i>
+                <span class="text-sm font-medium text-gray-700">Penggajian</span>
+            </a>
+
+            <a href="{{ route('report.peminjam') }}"
+                class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <i class="fas fa-file-alt text-red-600 text-2xl mb-2"></i>
+                <span class="text-sm font-medium text-gray-700">Laporan Kasbon</span>
+            </a>
+        @endif
     </div>
+</div>
 
     <!-- Chart.js Script -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

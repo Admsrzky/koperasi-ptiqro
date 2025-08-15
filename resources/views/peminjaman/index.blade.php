@@ -4,16 +4,16 @@
             <div class="flex justify-between items-center">
                 <h2 class="text-2xl font-bold flex items-center">
                     <i class="fas fa-money-bill-wave mr-3"></i>
-                    Data Peminjaman
+                    Data Kasbon
                 </h2>
                 <div class="flex space-x-2">
                     <a href="{{ route('peminjaman.create') }}"
                         class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-gray-100 transition font-medium">
-                        <i class="fas fa-plus mr-2"></i>Tambah Peminjaman
+                        <i class="fas fa-plus mr-2"></i>Tambah Kasbon
                     </a>
                     <a href="{{ route('report.peminjam') }}"
                         class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-gray-100 transition font-medium">
-                        <i class="fas fa-file-alt mr-2"></i>Laporan Peminjam
+                        <i class="fas fa-file-alt mr-2"></i>Laporan Kasbon
                     </a>
                 </div>
             </div>

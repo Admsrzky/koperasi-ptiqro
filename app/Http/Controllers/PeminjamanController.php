@@ -89,13 +89,41 @@ class PeminjamanController extends Controller
         return view('peminjaman.print', compact('peminjaman'));
     }
 
-    public function reportPeminjam()
+    // public function reportPeminjam()
+    // {
+    //     $peminjam = Karyawan::whereHas('peminjaman', function($query) {
+    //         $query->whereIn('status', ['disetujui', 'dicairkan']);
+    //     })->with(['peminjaman' => function($query) {
+    //         $query->whereIn('status', ['disetujui', 'dicairkan']);
+    //     }])->get();
+
+    //     return view('peminjaman.report', compact('peminjam'));
+    // }
+
+
+
+     public function reportPeminjam(Request $request)
     {
-        $peminjam = Karyawan::whereHas('peminjaman', function($query) {
+        $search = $request->input('search');
+
+        $peminjam = Karyawan::whereHas('peminjaman', function ($query) {
             $query->whereIn('status', ['disetujui', 'dicairkan']);
-        })->with(['peminjaman' => function($query) {
-            $query->whereIn('status', ['disetujui', 'dicairkan']);
-        }])->get();
+        })
+            ->with([
+                'peminjaman' => function ($query) {
+                    $query->whereIn('status', ['disetujui', 'dicairkan']);
+                }
+            ])
+            ->when($search, function ($query) use ($search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('nama', 'like', '%' . $search . '%')
+                        ->orWhere('nip', 'like', '%' . $search . '%')
+                        ->orWhereHas('peminjaman', function ($q) use ($search) {
+                            $q->where('jumlah_pinjaman', 'like', '%' . $search . '%');
+                        });
+                });
+            })
+            ->get();
 
         return view('peminjaman.report', compact('peminjam'));
     }
