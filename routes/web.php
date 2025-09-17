@@ -30,6 +30,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('peminjaman/{peminjaman}/disburse', [PeminjamanController::class, 'disburse'])->name('peminjaman.disburse');
     Route::get('peminjaman/{peminjaman}/print', [PeminjamanController::class, 'printPengajuan'])->name('peminjaman.print');
     Route::get('report/peminjam', [PeminjamanController::class, 'reportPeminjam'])->name('report.peminjam');
+    Route::get('/peminjaman/{peminjaman}/cetak', [PeminjamanController::class, 'cetakLaporan'])->name('peminjaman.cetak');
+
 
     // Penggajian Routes
     Route::resource('penggajian', PenggajianController::class);

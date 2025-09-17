@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 
@@ -126,5 +126,18 @@ class PeminjamanController extends Controller
             ->get();
 
         return view('peminjaman.report', compact('peminjam'));
+    }
+
+    public function cetakLaporan(Peminjaman $peminjaman)
+    {
+        // Anda bisa mengambil data tambahan di sini jika perlu
+        // Contoh: Mengambil nama direktur dari setting atau database
+        $namaDirektur = "Adman RIdo Purwanto"; // Ganti dengan nama direktur yang sebenarnya
+
+        // Load relasi karyawan untuk memastikan datanya tersedia di view
+        $peminjaman->load('karyawan');
+
+        // Kembalikan view cetak dengan data yang diperlukan
+        return view('peminjaman.cetak-laporan', compact('peminjaman', 'namaDirektur'));
     }
 }

@@ -20,8 +20,8 @@
 
             <!-- Page Heading -->
             @isset($header)
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <header class="bg-white shadow dark:bg-gray-800">
+                    <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
@@ -48,6 +48,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+     @stack('styles') {{-- Pastikan ini juga ada untuk CSS --}}
     <style>
         .sidebar-transition {
             transition: transform 0.3s ease-in-out;
@@ -113,14 +114,14 @@
         <!-- Dashboard Content -->
         <main class="p-6">
             <!-- Welcome Card -->
-            {{-- <div class="gradient-bg rounded-lg p-6 mb-6 text-white fade-in">
+            {{-- <div class="p-6 mb-6 text-white rounded-lg gradient-bg fade-in">
                 <div class="flex items-center justify-between">
                     <div>
-                        <h3 class="text-2xl font-bold mb-2">Selamat Datang di Dashboard Koperasi</h3>
+                        <h3 class="mb-2 text-2xl font-bold">Selamat Datang di Dashboard Koperasi</h3>
                         <p class="text-blue-100">Kelola koperasi Anda dengan mudah dan efisien</p>
                     </div>
                     <div class="hidden md:block">
-                        <i class="fas fa-chart-line text-6xl text-blue-200"></i>
+                        <i class="text-6xl text-blue-200 fas fa-chart-line"></i>
                     </div>
                 </div>
             </div> --}}
@@ -131,7 +132,7 @@
     </div>
 
     <!-- Overlay for mobile sidebar -->
-    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
+    <div id="overlay" class="fixed inset-0 z-40 hidden bg-black bg-opacity-50 lg:hidden"></div>
 
 
 
@@ -406,6 +407,7 @@
             });
         });
     </script>
+     @stack('scripts')
 </body>
 
 </html>
